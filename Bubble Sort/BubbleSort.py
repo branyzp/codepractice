@@ -20,7 +20,7 @@
 
 
 def bubbleSort(arr):
-    index_length = len(arr) -1
+    index_length = len(arr) - 1
     # this is to optimize the code so that if the array is already sorted it does not have to go through
     # the entire process again.
     sorted = False
@@ -42,16 +42,21 @@ def bubbleSort(arr):
 def bubble(arr):
     # n = len(arr)-1
     sorted = False
+    count = 0
     while not sorted:
         sorted = True
-        for i in range(0,N):
+        for i in range(0, N):
             if arr[i] > arr[i+1]:
                 sorted = False
-                arr[i],arr[i+1] = arr[i+1], arr[i]
-    return arr
+                count = count + 1
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+    return count
+
 
 N = int(input()) - 1
-unsorted = list(map(int,(input().split())))
+unsorted = list(map(int, (input().split())))
 
 print(bubble(unsorted))
+# ans: 0
 
+# this returns us the count of how many swaps are needed to sort this array using bubble sort, which is 0.
