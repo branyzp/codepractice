@@ -45,7 +45,27 @@ def twoSum(arr, targ):
                 break
 
 
-twoSum(nums, target)
-# to do
-# def improvedTwoSum(arr,targ):
-#     list = []
+# twoSum(nums, target)
+
+def improvedTwoSum(arr, targ):
+    # here we use a dict which stores key-value pairs
+    dict = {}
+    # iterate through the array nums using index - ele
+    for index, ele in enumerate(nums):
+        # simplify target - ele to show remainder, search for remainder in dict
+        if target - ele in dict:
+            # return the index of the target - ele e.g. 9(target) - 5(ele) = 4
+            return dict[target - ele], index
+            # return the index of ele e.g. 5
+        dict[ele] = index
+
+
+print(improvedTwoSum(nums, target))
+
+
+# def twoSum(self, nums: List[int], target: int) -> List[int]:
+#     dict = {}
+#     for index, ele in enumerate(nums):
+#         if target - ele in dict:
+#             return dict[target - ele], index
+#         dict[ele] = index
