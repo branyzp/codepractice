@@ -20,6 +20,7 @@
 
 
 def bubbleSort(arr):
+    # we take length of arr - 1 as the last element cannot be compared with anything as there does not exist a next element
     index_length = len(arr) - 1
     # this is to optimize the code so that if the array is already sorted it does not have to go through
     # the entire process again.
